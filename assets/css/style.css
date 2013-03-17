@@ -1,0 +1,84 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* KLEUREN
+ * Wit: #FFFFFF
+ * Lichtgrijs voor achtergrond: #F6F6F6
+ * Grijze achtergrond knoppen: #DADADA
+ * Grijze tekst op knoppen: #9D9D9C 
+ * Donkergrijs in links: #575756
+ * Rood: #BE1622
+ */
+
+body {
+	font-size: 16px;
+	line-height: 22px;
+	font-family: Helvetica, Arial, sans-serif;
+	background-color: #F6F6F6;
+}
+ 
+/* INLOGGEN + REGISTREREN */
+.form {
+	padding: 20px;
+}
+
+.form input {
+	border: 1px solid #9D9D9C;
+	padding: 10px;
+	font-size: 16px;
+	width: 100%;
+	margin: 5px 0;
+	-webkit-appearance: none;
+	-webkit-border-radius: 0px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+#btnLogin, #btnCreate {
+	background-color: #BE1622;
+	color: #FFFFFF;
+	border: 0px;
+	width: 100%;
+	text-align: left;
+	-webkit-appearance: none;
+}
+
+#btnLogin:active {
+	background-color: #000000;
+}
+
+.forgot {
+	text-align: right;
+	margin: 0px 20px 0px 0px;
+}
+
+.forgot a {
+	padding: 20px 0px 20px 20px;
+	color: #575756;
+	text-decoration: none;
+}
+
+.btnContainer {
+	width: 100%;
+	padding: 20px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	position: absolute;
+	bottom: 20px;
+}
+
+.switchBtn {
+	color: #9D9D9C;
+	border: 1px solid #9D9D9C;
+	text-align: center;
+}
+
+.switchBtn a {
+	color: #9D9D9C;
+	text-decoration: none;
+	font-weight: bold;
+	display: block;
+	padding: 10px;
+}

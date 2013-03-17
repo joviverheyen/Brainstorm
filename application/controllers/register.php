@@ -10,10 +10,9 @@ class Register extends CI_Controller {
 		$this->load->library('form_validation'); //structuur: field name, error message, validation rules
 		$this->form_validation->set_error_delimiters('<li>', '</li>');
 		$this->form_validation->set_message('required', '%s is een verplicht veld!');
-		$this->form_validation->set_rules('firstname', 'Voornaam', 'trim|required|min_length[2]');
-		$this->form_validation->set_rules('lastname', 'Achternaam', 'trim|required|min_length[2]');
+		$this->form_validation->set_rules('usern', 'Username', 'trim|required|min_length[2]');
 		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
-		$this->form_validation->set_rules('email', 'Email', 'callback_checkemail');
+		$this->form_validation->set_rules('password', 'Password', 'trim|required');
 		
 		if($this->form_validation->run() == FALSE) { //loopt alle gestelde regels af, als er 1 of meerdere niet voldoen wordt FALSE gereturned
 			$this->load->view('register_view');
@@ -27,13 +26,6 @@ class Register extends CI_Controller {
 				$this->load->view('register_view');					// anders keert hij terug naar het registratie formulier.
 			}
 		}	
-	}
-	
-	public function checkemail($string) {
-		if (stristr($string,'@student.lessius.eu') !== false) return true;
-    	if (stristr($string,'@lessius.eu') !== false) return true;
-		$this->form_validation->set_message('checkemail', 'Je kan enkel registreren met een geldig Lessius emailadres.');
-        return FALSE;
 	}
 }
 ?>

@@ -3,7 +3,7 @@
 class Membership_model extends CI_Model {
 	
 	public function validate() {
-		// zie of user bestaad en email en password matchen
+		// zie of user bestaat en email en password matchen
 		$user = $this->input->post('usern');
 		$pw = $this->input->post('password');
 		$this->db->where('User_Username', strtolower($user));
@@ -26,43 +26,16 @@ class Membership_model extends CI_Model {
 	}
 	
 	public function create_member() {
-		// maak nieuwe user aan
+		// Array opvullen met gegevens uit invulformulier
 		$new_member_insert_data = array(
-			'FirstName' => ucwords($this->input->post('firstname')),
-			'LastName' => ucwords($this->input->post('lastname')),
-			'Email' => strtolower($this->input->post('email')),
-			'Password' => md5($this->input->post('password')),
-			'Class' => $this->input->post('class'),
-			'Website' => $this->input->post('website'),
-			'Avatar' => 'none.jpg'
+			'User_Username' => ucwords($this->input->post('usern')),
+			'User_Email' => strtolower($this->input->post('email')),
+			'User_Password' => md5($this->input->post('password'))
 		);
 		
-		// MEMBER AANMAKEN
-		$insert = $this->db->insert('tblUsers', $new_member_insert_data);
+		// Nieuwe gebruiker toevoegen aan databank
+		$insert = $this->db->insert('BS_Users', $new_member_insert_data);
 		$userid = $this->db->insert_id(); // id van nieuwe user
-		
-		// TOEVOEGEN AAN GROEP
-		$class = $this->input->post('class'); // selected class
-		$this->db->select("GroupID"); // selecteer ID van deze klas
-		$this->db->from("tblGroups");
-		$this->db->where("GroupName", $class);
-		$query = $this->db->get();
-		if($query->num_rows() > 0){
-    		$row = $query->row();
-		}
-		$groupid = $row->GroupID;
-		$data = array(
-				'FK_UserID' => $userid,
-				'FK_GroupID' => $groupid
-			);
-		$this->db->insert('tblGroupMembers', $data);
-		$data = array(
-				'FK_UserID' => $userid,
-				'FK_GroupID' => 1
-			);
-		$this->db->insert('tblGroupMembers', $data);
-		
-		return $insert;
 	}		
 	
 }
