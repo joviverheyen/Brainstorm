@@ -1,7 +1,28 @@
 <?php /*$this->load->view('header');*/ ?>
+<<<<<<< HEAD
 <?php include('head.php')?>
 <body>
 	
+=======
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset=utf-8>
+	
+	<!-- stylesheet -->
+	<link rel="stylesheet" href="/brainstorm/assets/css/reset.css">
+	<link rel="stylesheet" href="/brainstorm/assets/css/style.css">
+	
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<title>Brainstorm - Register</title>
+	
+  </head>
+  <body>
+
+>>>>>>> Login
 	<div class="form">
 		<div class="feedback">
 			<ul>
@@ -18,6 +39,10 @@
 	
 	<div class="btnContainer"><div class="switchBtn"><a href="/brainstorm/index.php">I already have an account</a></div></div>
 
+<<<<<<< HEAD
 </body>
+=======
+ </body>
+>>>>>>> Login
 </html>
 <?php /*$this->load->view('footer');*/ ?>
