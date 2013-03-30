@@ -18,11 +18,11 @@ class Login extends CI_Controller {
 			
 			//$this->session->set_userdata($data);	//set_userdata voegt gegevens toe aan een sessie
 			//redirect('categories');
-			echo "Success";
+			echo '<script type="text/javascript"> window.alert("Success!") </script>';
 		}
 		else {
 			//redirect('http://www.ajweb.be/brainstorm/index.php');
-			echo "Failed";
+			echo '<script type="text/javascript"> window.alert("Oops! That login is incorrect. Please try again!") </script>';
 		}
 		
 	}
