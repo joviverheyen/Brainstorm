@@ -17,6 +17,10 @@
 		<link rel="stylesheet" href="/brainstorm/assets/css/reset.css">
 		<link rel="stylesheet" href="/brainstorm/assets/css/style.css">
 	
+		<!-- javascripts -->
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript" src="/brainstorm/assets/js/app.js"></script>
+	
 		<!--[if lt IE 9]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
