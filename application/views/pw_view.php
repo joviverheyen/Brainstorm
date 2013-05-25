@@ -1,5 +1,3 @@
-<?php /*$this->load->view('header');*/ ?>
-
 <?php include('includes/head.php')?>
 <body>
 
@@ -9,10 +7,7 @@
 			<br />
 			<input type="submit" value="Send New Password" id="btnSubmit" />
 		</form>
-
 	</div>
 	
  </body>
-
 </html>
-<?php /*$this->load->view('footer');*/ ?>

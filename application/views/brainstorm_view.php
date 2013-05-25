@@ -1,10 +1,14 @@
-<?php /*$this->load->view('header');*/ ?>
-<?php include('head.php')?>
+<?php include('includes/head.php')?>
 <body>
 	
 	<?php include('includes/titlebar.php')?>
 	
-	<div class="filter"></div>
+	<div class="filter clearfix">
+		<a href="#" class="filter-button active" id="following-button"><span>following</span></a>
+		<a href="#" class="filter-button" id="new-button"><span>new</span></a>
+		<a href="#" class="filter-button" id="popular-button"><span>popular</span></a>
+		<a href="#" class="filter-button" id="subscribed-button"><span>subscribed</span></a>
+	</div>
 	
 	<div class="brainstorm-container">
 		<?php foreach($rows as $r) : ?>
@@ -20,8 +24,7 @@
 		<?php endforeach; ?>
 	</div>
 
-	<!--<?php include('navbar.php')?>-->
+	<?php include('includes/navbar.php')?>
 
 </body>
 </html>
-<?php /*$this->load->view('footer');*/ ?>

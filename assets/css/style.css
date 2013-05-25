@@ -10,7 +10,7 @@
  * Rood: #BE1622
  */
  
-/* HELPER CLASSES*/
+/* HELPER CLASSES */
 .clearfix:after {
 	visibility: hidden;
 	display: block;
@@ -20,15 +20,19 @@
 	height: 0;
 }
 
-/*----- START CSS CODE -----*/
+/*--------------------------------------------- START CSS CODE ---------------------------------------------*/
 body {
 	font-size: 16px;
 	line-height: 22px;
 	font-family: Helvetica, Arial, sans-serif;
 	background-color: #F6F6F6;
 }
+
+body a {
+	text-decoration: none;
+}
  
-/* INLOGGEN + REGISTREREN */
+/*--------------------------------------------- INLOGGEN + REGISTREREN ---------------------------------------------*/
 .form {
 	padding: 20px;
 }
@@ -94,7 +98,14 @@ body {
 	padding: 10px;
 }
 
-/* TITLEBAR code van http://alistapart.com/article/holygrail */
+/*--------------------------------------------- TITLEBAR ---------------------------------------------*/
+/* code van http://alistapart.com/article/holygrail */
+
+/*div.titlebar-container {			TODO: fixed zetten
+	position: relative;
+	width: 100%;
+}*/
+
 div.titlebar {
 	padding: 0px 44px;
 }
@@ -140,17 +151,54 @@ hr#titlebar-divider {
 	position: relative;
 	top: -10px;
 }
+/*--------------------------------------------- FILTER BAR ---------------------------------------------*/
+div.filter {
+	padding: 20px;
+	width: auto;
+}
+
+div.filter a.filter-button {
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box;
+	display: block;
+	width: 25%;
+	text-align: center;
+	float: left;
+	height: 33px;
+	border-top: 2px solid #9D9D9C;
+	border-left: 2px solid #9D9D9C;
+	border-bottom: 2px solid #9D9D9C;
+	padding-top: 4px;
+	color: #9D9D9C;
+}
+
+div.filter a.active {
+	background-color: #DADADA;
+}
 
 
-/* BRAINSTORM LIST */
-body a {
-	text-decoration: none;
+div.filter a.filter-button:last-child {
+	border-right: 2px solid #9D9D9C;
+}
+
+
+
+/*--------------------------------------------- BRAINSTORM LIST ---------------------------------------------*/
+div.brainstorm-container a {
+	display: block;
+	width: 100%;
+	height: auto;
 }
 
 article.brainstorm {
 	margin: 20px 0px;
 	padding: 10px 20px;
 	border-left: 5px solid #BE1622;
+}
+
+article.brainstorm:last-child {
+
 }
 
 article.brainstorm h1.brainstorm-title {
@@ -187,6 +235,44 @@ article.brainstorm span.arrow {
 	top: -30px;
 }
 
+div.brainstorm-container a:last-child {
+	margin-bottom: 60px;
+}
 
+/*--------------------------------------------- NAVBAR ---------------------------------------------*/
+div.navbar {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
 
+div.button-container {
+	position: relative;
+}
 
+div.button-container a.navbar-button {
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box;
+	width: 33.33%;
+	width: calc(100%/3);
+	height: 46px;
+	float: left;
+	text-align: center;
+	border-top: 2px solid #9D9D9C;
+	background-color: #F6F6F6;
+	padding-top: 12px;
+	color: #9D9D9C;
+}
+
+div.navbar a#profile-button {
+	border-left: 2px solid #9D9D9C;
+	border-right: 2px solid #9D9D9C;
+}
+
+div.navbar a.active {
+	background-color: #BE1622;
+	border: none;
+	color: #ffffff;
+} 

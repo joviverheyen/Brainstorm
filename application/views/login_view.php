@@ -1,4 +1,3 @@
-<?php /*$this->load->view('header');*/ ?>
 <?php include('includes/head.php')?>
 <body>
 	
@@ -15,4 +14,3 @@
 
 </body>
 </html>
-<?php /*$this->load->view('footer');*/ ?>
