@@ -1,6 +1,6 @@
 <?php /*$this->load->view('header');*/ ?>
 
-<?php include('head.php')?>
+<?php include('includes/head.php')?>
 <body>
 
 	<div class="form">

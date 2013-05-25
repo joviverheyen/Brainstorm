@@ -8,10 +8,10 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
 		<!--Homescreen icons-->
-		<!--<link rel="apple-touch-icon" href="style/images/homescreen icons/touch-icon-iphone.png" />
-		<link rel="apple-touch-icon" sizes="72x72" href="style/images/homescreen icons/touch-icon-ipad.png" />
-		<link rel="apple-touch-icon" sizes="114x114" href="style/images/homescreen icons/touch-icon-iphone-retina.png" />
-		<link rel="apple-touch-icon" sizes="144x144" href="style/images/homescreen icons/touch-icon-ipad-retina.png" />-->
+		<link rel="apple-touch-icon" href="assets/img/homescreen icons/touch-icon-iphone.png" />
+		<link rel="apple-touch-icon" sizes="72x72" href="assets/img/homescreen icons/touch-icon-ipad.png" />
+		<link rel="apple-touch-icon" sizes="114x114" href="assets/img/homescreen icons/touch-icon-iphone-retina.png" />
+		<link rel="apple-touch-icon" sizes="144x144" href="assets/img/homescreen icons/touch-icon-ipad-retina.png" />
 
 		<!-- stylesheet -->
 		<link rel="stylesheet" href="/brainstorm/assets/css/reset.css">
