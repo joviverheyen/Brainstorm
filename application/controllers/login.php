@@ -17,7 +17,7 @@ class Login extends CI_Controller {
 			);
 			
 			//$this->session->set_userdata($data);	//set_userdata voegt gegevens toe aan een sessie
-			redirect('brainstorms');
+			redirect('brainstorm');
 			echo '<script type="text/javascript"> window.alert("Success!") </script>';
 		}
 		else {
