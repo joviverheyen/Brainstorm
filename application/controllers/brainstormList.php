@@ -1,6 +1,6 @@
 <?php
 
-class Brainstorm extends CI_Controller {
+class BrainstormList extends CI_Controller {
 	
 	public function index() {
 		$this->load->model('brainstorm_model');

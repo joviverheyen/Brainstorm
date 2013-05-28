@@ -27,5 +27,11 @@ class Brainstorm_model extends CI_Model {
 			return $data;
 		}
 	}
+	
+	public function addBrainstorm($data) {
+		//Data uit formulier invoegen in BS_Brainstorms tabel in db
+		$this->db->insert('BS_Brainstorms', $data);
+		return;
+	}
 }
 ?>

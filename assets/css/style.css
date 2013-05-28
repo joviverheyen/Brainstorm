@@ -32,12 +32,12 @@ body a {
 	text-decoration: none;
 }
  
-/*--------------------------------------------- INLOGGEN + REGISTREREN ---------------------------------------------*/
+/*--------------------------------------------- INLOGGEN + REGISTREREN + ADD BRAINSTORM ---------------------------------------------*/
 .form {
 	padding: 20px;
 }
 
-.form input {
+.form input, .form textarea {
 	border: 1px solid #9D9D9C;
 	padding: 10px;
 	font-size: 16px;
@@ -50,13 +50,19 @@ body a {
 	box-sizing: border-box;
 }
 
-#btnLogin, #btnCreate {
+.form textarea {
+	resize: none;
+	height: 150px;
+}
+
+#btnLogin, #btnCreate, #btnAddBrainstorm {
 	background-color: #BE1622;
 	color: #FFFFFF;
 	border: 0px;
 	width: 100%;
 	text-align: left;
 	-webkit-appearance: none;
+	cursor: pointer;
 }
 
 #btnLogin:active {
@@ -97,6 +103,8 @@ body a {
 	display: block;
 	padding: 10px;
 }
+
+
 
 /*--------------------------------------------- TITLEBAR ---------------------------------------------*/
 /* code van http://alistapart.com/article/holygrail */
