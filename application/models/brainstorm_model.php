@@ -33,5 +33,23 @@ class Brainstorm_model extends CI_Model {
 		$this->db->insert('BS_Brainstorms', $data);
 		return;
 	}
+	
+	public function getBrainstormDetails($brainstorm_ID) {
+		/*Details van één brainstorm uit de db ophalen
+		
+		SELECT * 
+		FROM BS_Brainstorms
+		WHERE PK_Brainstorm_ID = ?
+		
+		*/
+		
+		$q = $this->db->get_where('BS_Brainstorms', array('PK_Brainstorm_ID' => $brainstorm_ID));
+		if($q->num_rows() > 0) {
+			foreach ($q->result() as $row) {
+				$data[] = $row;
+			}
+			return $data;
+		}
+	}
 }
 ?>

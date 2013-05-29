@@ -12,7 +12,7 @@
 	
 	<div class="brainstorm-container">
 		<?php foreach($rows as $r) : ?>
-		<a href="#">
+		<a href="brainstormDetail/show/<?php echo $r->PK_Brainstorm_ID; ?>">
 		<article class="brainstorm">
 			<div class="content">
 				<h1 class="brainstorm-title"><?php echo $r->Brainstorm_Title; ?></h1>
