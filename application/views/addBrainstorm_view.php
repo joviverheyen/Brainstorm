@@ -18,7 +18,7 @@
 		<?php echo form_close(); ?>
 	</div>
 
-	<?php include('includes/navbar.php')?>
+	<?php include('includes/navbar-home.php')?>
 
 </body>
 </html>

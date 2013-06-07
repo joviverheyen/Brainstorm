@@ -31,6 +31,14 @@ body {
 body a {
 	text-decoration: none;
 }
+
+/*Buttons en andere elementen naar boven duwen zodat ze helemaal op het scherm staan*/
+div.brainstorm-container a:last-child, 
+#btnReply, 
+#btnAddBrainstorm, 
+#btnSearch {
+	margin-bottom: 60px;
+}
  
 /*--------------------------------------------- INLOGGEN + REGISTREREN + ADD BRAINSTORM ---------------------------------------------*/
 .form {
@@ -55,7 +63,7 @@ body a {
 	height: 150px;
 }
 
-#btnLogin, #btnCreate, #btnAddBrainstorm, #btnReply {
+#btnLogin, #btnCreate, #btnAddBrainstorm, #btnReply, #btnSearch {
 	background-color: #BE1622;
 	color: #FFFFFF;
 	border: 0px;
@@ -258,10 +266,6 @@ article.brainstorm span.arrow {
 	top: -30px;
 }
 
-div.brainstorm-container a:last-child {
-	margin-bottom: 60px;
-}
-
 article.brainstorm-details div.links {
 	margin: 15px 0px 5px;
 }
@@ -283,6 +287,42 @@ article.brainstorm-details div.links a.subscribe {
 	font-weight: bold;
 	font-size: 12px;
 }
+
+/*--------------------------------------------- SEARCH ---------------------------------------------*/
+div.search-filter {
+	margin: 30px 0px 30px 0px;
+}
+
+input[type="radio"] {
+	display:none;
+}
+
+input[type="radio"] + label span {
+	display:inline-block;
+	width:50%;
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box;
+	display: block;
+	text-align: center;
+	float: left;
+	height: 33px;
+	border-top: 2px solid #9D9D9C;
+	border-left: 2px solid #9D9D9C;
+	border-bottom: 2px solid #9D9D9C;
+	padding-top: 4px;
+	color: #9D9D9C;
+	cursor: pointer;
+}
+
+input[type="radio"] + label:last-child span {
+    border-right: 2px solid #9D9D9C;
+}
+
+input[type="radio"]:checked + label span {
+    background-color: #DADADA;
+}
+
 
 /*--------------------------------------------- NAVBAR ---------------------------------------------*/
 div.navbar {
