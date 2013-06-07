@@ -9,5 +9,7 @@
 		</form>
 	</div>
 	
+	<div class="forgot"><a href="<?php echo site_url('') ?>">Login</a></div>
+	
  </body>
 </html>

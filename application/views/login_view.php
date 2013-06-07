@@ -9,7 +9,7 @@
 		</form>
 	</div>
 	
-	<div class="forgot"><a href="#">I forgot my password</a></div>
+	<div class="forgot"><a href="<?php echo site_url('forgot_pw') ?>">I forgot my password</a></div>
 	<div class="btnContainer"><div class="switchBtn"><a href="/brainstorm/index.php/register">Create account</a></div></div>
 
 </body>

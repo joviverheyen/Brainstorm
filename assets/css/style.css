@@ -62,7 +62,7 @@ div.brainstorm-container a:last-child,
 	height: 150px;
 }
 
-#btnLogin, #btnCreate, #btnAddBrainstorm, #btnReply, #btnSearch {
+#btnLogin, #btnCreate, #btnAddBrainstorm, #btnReply, #btnSearch, #btnSubmit {
 	background-color: #BE1622;
 	color: #FFFFFF;
 	border: 0px;
