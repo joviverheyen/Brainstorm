@@ -38,5 +38,17 @@ class Membership_model extends CI_Model {
 		$userid = $this->db->insert_id(); // id van nieuwe user
 	}		
 	
+	function getUserId($usern) {
+		// deze functie returned de userID op basis van het username van de user die opgeslagen is in de sessie.
+		$this->db->select('PK_User_ID');
+		$this->db->from('BS_Users');
+		$this->db->where('User_Username', $usern);
+		$query = $this->db->get();
+		
+		if($query->num_rows() > 0){
+	  			$row = $query->row();
+		}
+		return $row->PK_User_ID;
+	}
 }
 ?>
