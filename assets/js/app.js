@@ -12,5 +12,6 @@ $(document).ready(function() {
 	
 	//Show the title of the brainstorm in the titlebar instead of ON the page
 	$('.titlebar-title').text($('.brainstorm-details').attr('data-title'));
+	$('.titlebar-title').text($('.profile').attr('data-title'));
 	
 });
