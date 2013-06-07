@@ -209,13 +209,13 @@ div.filter a.filter-button:last-child {
 
 
 /*--------------------------------------------- BRAINSTORM LIST + BRAINSTORM DETAIL PAGE ---------------------------------------------*/
-div.brainstorm-container a {
+div.brainstorm-container a, div.user-container a {
 	display: block;
 	width: 100%;
 	height: auto;
 }
 
-article.brainstorm {
+article.brainstorm, article.user {
 	margin: 20px 0px;
 	padding: 10px 20px;
 	border-left: 5px solid #BE1622;
@@ -227,7 +227,7 @@ article.brainstorm-details {
 	background-color: #EDEDED;
 }
 
-article.brainstorm h1.brainstorm-title {
+article.brainstorm h1.brainstorm-title, article.user h1.username {
 	font-weight: normal;
 	font-size: 18px;
 	position: relative;
@@ -242,7 +242,7 @@ article.brainstorm h1.brainstorm-title {
 	-ms-text-overflow: ellipsis;
 }
 
-article.brainstorm span.posted, article.brainstorm-details span.posted {
+article.brainstorm span.posted, article.brainstorm-details span.posted, article.user span.full-name {
 	font-size: 12px;
 	color: #9D9D9C;
 	position: relative;
@@ -254,7 +254,7 @@ article.brainstorm-details span.posted {
 	top: 0px;
 }
 
-article.brainstorm span.arrow {
+article.brainstorm span.arrow, article.user span.arrow {
 	display: block;
 	width: 10px;
 	height: 10px;
@@ -288,6 +288,7 @@ article.brainstorm-details div.links a.subscribe {
 }
 
 /*--------------------------------------------- SEARCH ---------------------------------------------*/
+/*------------------------------ Some styles are inherited from brainstormList view ------------------------------*/
 div.search-filter {
 	margin: 30px 0px 30px 0px;
 }
@@ -321,6 +322,8 @@ input[type="radio"] + label:last-child span {
 input[type="radio"]:checked + label span {
     background-color: #DADADA;
 }
+
+
 
 
 /*--------------------------------------------- NAVBAR ---------------------------------------------*/
