@@ -38,7 +38,7 @@
 	<?php if(!empty($users)) : ?>
 		<div class="user-container">
 			<?php foreach($users as $u) : ?>
-			<a href="brainstormDetail/show/<?php echo $u->PK_User_ID; ?>">
+			<a href="<?php echo site_url('profile') . '/index/' . $u->PK_User_ID; ?>">
 				<article class="user">
 					<div class="content">
 						<h1 class="username"><?php echo $u->User_Username; ?></h1>
