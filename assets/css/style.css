@@ -35,8 +35,7 @@ body a {
 /*Buttons en andere elementen naar boven duwen zodat ze helemaal op het scherm staan*/
 div.brainstorm-container a:last-child, 
 #btnReply, 
-#btnAddBrainstorm, 
-#btnSearch {
+#btnAddBrainstorm {
 	margin-bottom: 60px;
 }
  
@@ -361,3 +360,36 @@ div.navbar a.active {
 	border: none;
 	color: #ffffff;
 } 
+
+/*--------------------------------------------- PROFILE ---------------------------------------------*/
+
+article.profile {
+	clear: both;
+	padding: 40px;
+}
+
+a.social {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+}
+
+a#web {
+	background: url(../img/social-web.svg) no-repeat center center;
+}
+
+a#twitter {
+	background: url(../img/social-twitter.svg) no-repeat center center;
+}
+
+a#facebook {
+	background: url(../img/social-facebook.svg) no-repeat center center;
+}
+
+a#dribbble {
+	background: url(../img/social-dribbble.svg) no-repeat center center;
+}
+
+a#behance {
+	background: url(../img/social-behance.svg) no-repeat center center;
+}
