@@ -19,6 +19,7 @@ class Brainstorm_model extends CI_Model {
 		$this->db->select('BS_Brainstorms.PK_Brainstorm_ID, BS_Brainstorms.Brainstorm_Title, BS_Brainstorms.Brainstorm_Timestamp, BS_Users.User_Username');
 		$this->db->from('BS_Brainstorms');
 		$this->db->join('BS_Users', 'BS_Users.PK_User_ID = BS_Brainstorms.FK_Brainstorm_User_ID');
+		$this->db->order_by("Brainstorm_Timestamp", "desc");
 		$q = $this->db->get();
 		if($q->num_rows() > 0) {
 			foreach ($q->result() as $row) {
@@ -31,7 +32,8 @@ class Brainstorm_model extends CI_Model {
 	public function addBrainstorm($data) {
 		//Data uit formulier invoegen in BS_Brainstorms tabel in db
 		$this->db->insert('BS_Brainstorms', $data);
-		return;
+		$bs_id = $this->db->insert_id();
+		return $bs_id;
 	}
 	
 	public function getBrainstormDetails($brainstorm_ID) {
@@ -50,6 +52,19 @@ class Brainstorm_model extends CI_Model {
 			}
 			return $data;
 		}
+	}
+	
+	function getUserId($usern) {
+		// deze functie returned de userID op basis van het username van de user die opgeslagen is in de sessie.
+		$this->db->select('PK_User_ID');
+		$this->db->from('BS_Users');
+		$this->db->where('User_Username', $usern);
+		$query = $this->db->get();
+		
+		if($query->num_rows() > 0){
+	  			$row = $query->row();
+		}
+		return $row->PK_User_ID;
 	}
 }
 ?>

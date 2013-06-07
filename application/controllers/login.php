@@ -16,13 +16,12 @@ class Login extends CI_Controller {
 				'is_logged_in' => true
 			);
 			
-			//$this->session->set_userdata($data);	//set_userdata voegt gegevens toe aan een sessie
+			$this->session->set_userdata($data);	//set_userdata voegt gegevens toe aan een sessie
 			redirect('brainstormList');
-			echo '<script type="text/javascript"> window.alert("Success!") </script>';
 		}
 		else {
-			//redirect('http://www.ajweb.be/brainstorm/index.php');
 			echo '<script type="text/javascript"> window.alert("Oops! That login is incorrect. Please try again!") </script>';
+			redirect('http://www.ajweb.be/brainstorm/index.php');
 		}
 		
 	}
