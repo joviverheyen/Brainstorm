@@ -1,12 +1,14 @@
 <?php include('includes/head.php')?>
 <body>
 	
-	<?php include('includes/titlebar.php')?>
+	<?php include('includes/titlebar-edit.php')?>
 	
 	<?php foreach($rows as $r) : ?>
 		
 		<article class="profile" data-title="<?php echo $r->User_Username; ?>">
 			<div class="content">
+				<p><?php echo $r->User_Bio; ?></p>
+			
 				<?php if($r->User_Website != NULL) : ?>
 				<a class="social" id="web" href="<?php echo $r->User_Website; ?>"></a> 
 				<?php endif; ?>
@@ -32,7 +34,7 @@
 		</article>
 	<?php endforeach; ?>
 	
-	<div class="filter clearfix">
+	<div class="filter clearfix" id="profile">
 		<a href="#" class="filter-button active" id="ideas-button"><span>My Ideas</span></a>
 		<a href="#" class="filter-button" id="following-button"><span>Following</span></a>
 		<a href="#" class="filter-button" id="followers-button"><span>Followers</span></a>

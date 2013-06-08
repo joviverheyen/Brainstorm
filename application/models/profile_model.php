@@ -32,6 +32,24 @@ class Profile_model extends CI_Model {
 			return $data;
 		}
 	}
+	
+	function updateUser($data, $user_id) {
+		$this->db->where('PK_User_ID', $user_id);
+		$this->db->update('BS_Users', $data); 
+	}
+	
+	function getFields() {
+		$this->db->select('*');
+		$this->db->from('BS_Fields');
+		$q = $this->db->get();
+		if($q->num_rows() > 0) {
+			foreach ($q->result() as $row) {
+				$data[] = $row;
+			}
+			return $data;
+		}
+
+	}
 }
 
 ?>
