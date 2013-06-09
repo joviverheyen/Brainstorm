@@ -8,22 +8,25 @@
 			<input type="text" name="add-brainstorm-title" id="add-brainstorm-title" placeholder="The title of your brainstorm"/> <br />
 			<textarea name="add-brainstorm-text" id="add-brainstorm-text" placeholder="Give some extra info about your idea..."></textarea> <br />
 			
-			
 			<div class="categories clearfix" name="categories">
-				<input type="checkbox" id="one" name="category" value="one"/>
-				<label for="one"><span class="category-button">one</span></label>
-				<input type="checkbox" id="two" name="category" value="two"/>
-				<label for="two"><span class="category-button">two</span></label>
-				<input type="checkbox" id="three" name="category" value="two"/>
-				<label for="three"><span class="category-button">three</span></label>
-				<input type="checkbox" id="four" name="category" value="two"/>
-				<label for="four"><span class="category-button">four</span></label>
+				<?php foreach ($row as $r) : ?>
+					<input type="checkbox" id="<?php echo $r->PK_Tag_ID; ?>" name="category[]" value="<?php echo $r->PK_Tag_ID; ?>"/>
+					<label for="<?php echo $r->PK_Tag_ID; ?>"><span class="category-button"><?php echo $r->Tag_Label; ?></span></label>
+				<?php endforeach; ?>
+			</div>
+			
+			<br/>
+			
+			<div class="privacy clearfix">
+				<input type="radio" id="public" name="privacy" value="0"/>
+				<label for="public"><span class="search-filter-button">Public</span></label>
+				<input type="radio" id="private" name="privacy" value="1"/>
+				<label for="private"><span class="search-filter-button">Private</span></label>
 			</div>
 			
 			<br/>
 			<h3>TODO: </h3>
 			<p>images</p>
-			<p>private?</p>
 			<p>invite people</p>
 			
 			<input type="submit" value="Add brainstorm" id="btnAddBrainstorm"/>

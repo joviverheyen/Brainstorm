@@ -66,5 +66,18 @@ class Brainstorm_model extends CI_Model {
 		}
 		return $row->PK_User_ID;
 	}
+	
+	public function getCategories() {
+		$this->db->select('*');
+		$this->db->from('BS_Tags');
+		$query = $this->db->get();
+		
+		if($query->num_rows() > 0) {
+			foreach ($query->result() as $row) {
+				$data[] = $row;
+			}
+			return $data;
+		}
+	}
 }
 ?>
