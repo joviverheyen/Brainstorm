@@ -294,17 +294,17 @@ article.brainstorm-details div.links a.subscribe {
 	font-size: 12px;
 }
 
-/*--------------------------------------------- SEARCH ---------------------------------------------*/
+/*--------------------------------------------- SEARCH + CATEGORY SELECTION IN ADD BRAINSTORM ---------------------------------------------*/
 /*------------------------------ Some styles are inherited from brainstormList view ------------------------------*/
 div.search-filter {
 	margin: 30px 0px 30px 0px;
 }
 
-input[type="radio"] {
+input[type="radio"], input[type="checkbox"] {
 	display:none;
 }
 
-input[type="radio"] + label span {
+input[type="radio"] + label span, input[type="checkbox"] + label span {
 	display:inline-block;
 	width:50%;
 	-moz-box-sizing: border-box; 
@@ -322,16 +322,21 @@ input[type="radio"] + label span {
 	cursor: pointer;
 }
 
-input[type="radio"] + label:last-child span {
+div.categories input[type="checkbox"] + label span {
+	border-top: none;
+}
+
+div.categories input[type="checkbox"]:first-child + label span, div.categories input[type="checkbox"]:nth-child(3) + label span {
+	border-top: 2px solid #9D9D9C;
+}
+
+input[type="radio"] + label:last-child span, input[type="checkbox"] + label:last-child span, div.categories input[type="checkbox"]:nth-of-type(even) + label span {
     border-right: 2px solid #9D9D9C;
 }
 
-input[type="radio"]:checked + label span {
+input[type="radio"]:checked + label span, input[type="checkbox"]:checked + label span {
     background-color: #DADADA;
 }
-
-
-
 
 /*--------------------------------------------- NAVBAR ---------------------------------------------*/
 div.navbar {
