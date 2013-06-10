@@ -28,9 +28,9 @@
 					<input type="radio" id="private" name="privacy" value="1" <?php if($b->Brainstorm_Privacy == 1) : ?> checked="checked" <?php endif ;?>/>
 					<label for="private"><span class="search-filter-button">Private</span></label>
 				</div>
-			
-				<br/>
-			
+				</br>
+				<input type="file" id="userfile" name="userfile" /> <br />
+				</br>
 				<input type="submit" value="edit brainstorm" id="btnEditBrainstorm"/>
 			<?php echo form_close(); ?>
 		</div>	

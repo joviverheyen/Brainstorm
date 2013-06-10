@@ -29,6 +29,8 @@
 			<p>images</p>
 			<p>invite people</p>
 			
+			<input type="file" id="userfile" name="userfile" /> <br />
+			
 			<input type="submit" value="Add brainstorm" id="btnAddBrainstorm"/>
 		<?php echo form_close(); ?>
 	</div>
