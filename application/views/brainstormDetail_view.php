@@ -10,9 +10,9 @@
 				<span class="brainstorm-body"><?php echo $b->Brainstorm_Text; ?></span>
 			</div>
 			<div class="links">
-				<a href="#" class="category"><span>web</span></a>
-				<a href="#" class="category"><span>design</span></a>
-				<a href="#" class="category"><span>colors</span></a>
+				<a href="#" class="category"><span><?php echo $b->Tag_Label1; ?></span></a>
+				<a href="#" class="category"><span><?php echo $b->Tag_Label2; ?></span></a>
+				<a href="#" class="category"><span><?php echo $b->Tag_Label3; ?></span></a>
 				<a href="#" class="subscribe"><span>subscribe</span></a>
 			</div>
 		</article>

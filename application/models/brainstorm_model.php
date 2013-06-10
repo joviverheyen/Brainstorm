@@ -3,18 +3,7 @@
 class Brainstorm_model extends CI_Model {
 	
 	public function getAllBrainstorms() {
-		/*Alle brainstorms ophalen om uit te lijsten in brainstorm_view
-		
-		SELECT 	BS_Brainstorms.PK_Brainstorm_ID,
-				BS_Brainstorms.Brainstorm_Title,
-				BS_Brainstorms.Brainstorm_Timestamp,
-				BS_Users.User_Username 
-		
-		FROM 	BS_Brainstorms
-
-		JOIN 	BS_Users 
-		ON 		BS_Users.PK_User_ID = BS_Brainstorms.FK_Brainstorm_User_ID;
-		*/
+		/* Alle brainstorms ophalen om uit te lijsten in brainstorm_view */
 		
 		$this->db->select('BS_Brainstorms.PK_Brainstorm_ID, BS_Brainstorms.Brainstorm_Title, BS_Brainstorms.Brainstorm_Timestamp, BS_Users.User_Username');
 		$this->db->from('BS_Brainstorms');
@@ -45,9 +34,16 @@ class Brainstorm_model extends CI_Model {
 		
 		*/
 		
-		$this->db->join('BS_Users', 'BS_Users.PK_User_ID = BS_Brainstorms.FK_Brainstorm_User_ID');
-		$q = $this->db->get_where('BS_Brainstorms', array('PK_Brainstorm_ID' => $brainstorm_ID));
+		$this->db->select('*, Tag1.Tag_Label AS Tag_Label1, Tag2.Tag_Label AS Tag_Label2, Tag3.Tag_Label AS Tag_Label3');
+		$this->db->from('BS_Brainstorms');
 		
+		$this->db->join('BS_Users', 'BS_Users.PK_User_ID = BS_Brainstorms.FK_Brainstorm_User_ID');
+		
+		$this->db->join('BS_Tags AS Tag1', 'Tag1.PK_Tag_ID = BS_Brainstorms.FK_Brainstorm_Tag1', 'left');
+		$this->db->join('BS_Tags AS Tag2', 'Tag2.PK_Tag_ID = BS_Brainstorms.FK_Brainstorm_Tag2', 'left');
+		$this->db->join('BS_Tags AS Tag3', 'Tag3.PK_Tag_ID = BS_Brainstorms.FK_Brainstorm_Tag3', 'left');
+		$this->db->where('PK_Brainstorm_ID', $brainstorm_ID);
+		$q = $this->db->get();
 		if($q->num_rows() > 0) {
 			foreach ($q->result() as $row) {
 				$data[] = $row;
