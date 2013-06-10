@@ -5,11 +5,12 @@
 	
 	<?php foreach($rows as $r) : ?>
 	<div class="form">
-		<?php echo form_open('editProfile/update'); ?>
+		<form method="post" action="editProfile/update" enctype="multipart/form-data" />
 			<input type="text" name="update-username" id="update-username" placeholder="Username" value="<?php echo $r->User_Username; ?>" /> <br />
 			<input type="text" name="update-fn" id="update-fn" placeholder="First Name"  value="<?php echo $r->User_FirstName; ?>" /> <br />
 			<input type="text" name="update-ln" id="update-ln" placeholder="Last Name" value="<?php echo $r->User_LastName; ?>" /> <br />
 			<input type="text" name="update-email" id="update-email" placeholder="Email" value="<?php echo $r->User_Email; ?>" /> <br />
+			<input type="file" id="userfile" name="userfile" /> <br />
 			<textarea name="update-bio" id="update-bio" placeholder="Bio"><?php echo $r->User_Bio; ?></textarea> <br />
 			<input type="text" name="update-website" id="update-website" placeholder="Website" value="<?php echo $r->User_Website; ?>" /> <br />
 			<input type="text" name="update-twitter" id="update-twitter" placeholder="Twitter" value="<?php echo $r->User_Twitter; ?>" /> <br />
@@ -39,7 +40,7 @@
 			</select>
 			
 			<input type="submit" value="Update Profile" id="btnUpdateProfile"/>
-		<?php echo form_close(); ?>
+		</form>
 	</div>
 	<?php endforeach; ?>
 		

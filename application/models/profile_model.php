@@ -33,6 +33,20 @@ class Profile_model extends CI_Model {
 		}
 	}
 	
+	function getUserImage($user_id) {
+		$this->db->select('User_Image');
+		$this->db->from('BS_Users');
+		$this->db->where('PK_User_ID', $user_id);
+		$q = $this->db->get();
+		
+		if($q->num_rows() > 0) {
+			foreach ($q->result() as $row) {
+				$data = $row->User_Image;
+			}
+			return $data;
+		}
+	}
+	
 	function updateUser($data, $user_id) {
 		$this->db->where('PK_User_ID', $user_id);
 		$this->db->update('BS_Users', $data); 

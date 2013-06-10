@@ -13,13 +13,22 @@ class EditProfile extends CI_Controller {
 	
 	public function update() {
 		$this->load->model('Profile_model');
+		$this->load->model('Uploadav_model');
 		$user_id = $this->session->userdata('userid');
+		$user_image = $this->Profile_model->getUserImage($user_id);
+		
+		$filename = $this->Uploadav_model->do_upload();
+		
+		if($filename == NULL) {
+			$filename = $user_image;
+		}
 		
 		$data = array (
 			'User_Username' => $this->input->post('update-username'),
 			'User_FirstName' => $this->input->post('update-fn'),
 			'User_LastName' => $this->input->post('update-ln'),
 			'User_Email' => $this->input->post('update-email'),
+			'User_Image' => $filename,
 			'User_Bio' => $this->input->post('update-bio'),
 			'User_Website' => $this->input->post('update-website'),
 			'User_Twitter' => $this->input->post('update-twitter'),

@@ -7,6 +7,14 @@
 		
 		<article class="profile" data-title="<?php echo $r->User_Username; ?>">
 			<div class="content">
+				<div class="image">
+				<?php if($r->User_Image != NULL) : ?>
+					<img src="/brainstorm/uploads/avatars/<?php echo $r->User_Image; ?>" alt="<?php echo $r->User_Username; ?>" />
+				<?php else : ?>
+					<img src="/brainstorm/uploads/avatars/none.jpg" alt="<?php echo $r->User_Username; ?>" />
+				<?php endif; ?>
+				</div>
+				
 				<p><?php echo $r->User_Bio; ?></p>
 			
 				<?php if($r->User_Website != NULL) : ?>
