@@ -234,6 +234,11 @@ article.brainstorm-details {
 	background-color: #EDEDED;
 }
 
+div.brainstorm-reactions {
+	margin: 20px 0px;
+	padding: 10px 20px;
+}
+
 article.brainstorm h1.brainstorm-title, article.user h1.username {
 	font-weight: normal;
 	font-size: 18px;
@@ -249,7 +254,7 @@ article.brainstorm h1.brainstorm-title, article.user h1.username {
 	-ms-text-overflow: ellipsis;
 }
 
-article.brainstorm span.posted, article.brainstorm-details span.posted, article.user span.full-name {
+article.brainstorm span.posted, article.brainstorm-details span.posted, article.user span.full-name, article.reaction span.posted {
 	font-size: 12px;
 	color: #9D9D9C;
 	position: relative;
@@ -257,7 +262,7 @@ article.brainstorm span.posted, article.brainstorm-details span.posted, article.
 	text-decoration: none;
 }
 
-article.brainstorm-details span.posted {
+article.brainstorm-details span.posted, article.reaction span.posted {
 	top: 0px;
 }
 
@@ -292,6 +297,12 @@ article.brainstorm-details div.links a.subscribe {
 	float: right;
 	font-weight: bold;
 	font-size: 12px;
+}
+
+hr#reaction-divider {
+	width: 60%;
+	border: 1px solid #9D9D9C;
+	margin: 15px auto;
 }
 
 /*--------------------------------------------- SEARCH + CATEGORY SELECTION IN ADD BRAINSTORM ---------------------------------------------*/

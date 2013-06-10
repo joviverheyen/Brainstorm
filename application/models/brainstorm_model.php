@@ -37,7 +37,7 @@ class Brainstorm_model extends CI_Model {
 	}
 	
 	public function getBrainstormDetails($brainstorm_ID) {
-		/*Details van één brainstorm uit de db ophalen
+		/*Details van een brainstorm uit de db ophalen
 		
 		SELECT * 
 		FROM BS_Brainstorms
@@ -45,13 +45,36 @@ class Brainstorm_model extends CI_Model {
 		
 		*/
 		
+		$this->db->join('BS_Users', 'BS_Users.PK_User_ID = BS_Brainstorms.FK_Brainstorm_User_ID');
 		$q = $this->db->get_where('BS_Brainstorms', array('PK_Brainstorm_ID' => $brainstorm_ID));
+		
 		if($q->num_rows() > 0) {
 			foreach ($q->result() as $row) {
 				$data[] = $row;
 			}
 			return $data;
 		}
+	}
+	
+	public function getBrainstormReactions($brainstorm_ID) {
+		/*Reacties van een brainstorm uit de db ophalen
+		
+		SELECT * 
+		FROM BS_Reactions
+		WHERE PK_Brainstorm_ID = ?
+		
+		*/
+		
+		$this->db->join('BS_Users', 'BS_Users.PK_User_ID = BS_Reactions.FK_Reaction_User_ID');
+		$q = $this->db->get_where('BS_Reactions', array('FK_Reaction_Brainstorm_ID' => $brainstorm_ID));
+		
+		if($q->num_rows() > 0) {
+			foreach ($q->result() as $row) {
+				$data[] = $row;
+			}
+			return $data;
+		}
+
 	}
 	
 	function getUserId($usern) {
@@ -78,6 +101,11 @@ class Brainstorm_model extends CI_Model {
 			}
 			return $data;
 		}
+	}
+	
+	public function reply($data) {
+		/*Data uit formulier invoegen als reactie*/
+		$this->db->insert('BS_Reactions', $data);
 	}
 }
 ?>
