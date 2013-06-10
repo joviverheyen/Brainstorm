@@ -18,6 +18,7 @@
 		</article>
 	<?php endforeach; ?>
 
+	<?php if($reactions) : ?>
 	<div class="brainstorm-reactions">
 		<?php foreach($reactions as $r) : ?>
 			<article class="reaction">
@@ -26,8 +27,8 @@
 			</article>
 			<hr id="reaction-divider"/>
 		<?php endforeach; ?>
-
 	</div>
+	<?php endif ?>
 	
 	<div class="form">
 		<?php echo form_open('brainstormDetail/reply'); ?>
