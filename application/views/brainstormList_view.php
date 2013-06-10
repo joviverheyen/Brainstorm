@@ -10,6 +10,7 @@
 	</div>
 	
 	<div class="brainstorm-container">
+		<?php if(isset($rows)) : ?>
 		<?php foreach($rows as $r) : ?>
 		<a href="brainstormDetail/show/<?php echo $r->PK_Brainstorm_ID; ?>">
 		<article class="brainstorm">
@@ -21,6 +22,10 @@
 		</article>
 		</a>
 		<?php endforeach; ?>
+		<?php else : ?>
+			<p>You aren't following anyone.</p>
+		<?php endif; ?>
+
 	</div>
 
 	<?php include('includes/navbar-home.php')?>

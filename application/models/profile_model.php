@@ -65,6 +65,42 @@ class Profile_model extends CI_Model {
 
 	}
 	
+	public function getFollowing($user_id) {
+		/* SELECT * FROM BS_Users
+		INNER JOIN BS_UserUserLinks ON BS_UserUserLinks.FK_UserUserLink_Following_ID = BS_Users.PK_User_ID
+		WHERE BS_UserUserLinks.FK_UserUserLink_User_ID = 1 */
+		
+		$this->db->select('*');
+		$this->db->from('BS_Users');
+		$this->db->join('BS_UserUserLinks', 'BS_UserUserLinks.FK_UserUserLink_Following_ID = BS_Users.PK_User_ID');
+		$this->db->where('BS_UserUserLinks.FK_UserUserLink_User_ID', $user_id);
+		$q = $this->db->get();
+		if($q->num_rows() > 0) {
+			foreach ($q->result() as $row) {
+				$data[] = $row;
+			}
+			return $data;
+		}
+	}
+	
+	public function getFollowers($user_id) {
+		/* SELECT * FROM BS_Users
+		INNER JOIN BS_UserUserLinks ON BS_UserUserLinks.FK_UserUserLink_User_ID = BS_Users.PK_User_ID
+		WHERE BS_UserUserLinks.FK_UserUserLink_Following_ID = 1 */
+		
+		$this->db->select('*');
+		$this->db->from('BS_Users');
+		$this->db->join('BS_UserUserLinks', 'BS_UserUserLinks.FK_UserUserLink_User_ID = BS_Users.PK_User_ID');
+		$this->db->where('BS_UserUserLinks.FK_UserUserLink_Following_ID', $user_id);
+		$q = $this->db->get();
+		if($q->num_rows() > 0) {
+			foreach ($q->result() as $row) {
+				$data[] = $row;
+			}
+			return $data;
+		}
+	}
+	
 	public function follow($data) {
 		$this->db->insert('BS_UserUserLinks', $data);
 	}

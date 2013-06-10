@@ -13,6 +13,28 @@ class Profile extends CI_Controller {
 		$this->load->view('profile_view', $user_data); // gegevens user naar view sturen
 	}
 	
+	public function following() {
+		$profile_id = $this->uri->segment(3);
+		$user_id = $this->session->userdata('userid');
+		$this->load->model('Profile_model');
+		$user_data['follow'] = $this->Profile_model->checkFollow($profile_id, $user_id);
+		$user_data['rows'] = $this->Profile_model->getUser($profile_id);
+		$user_data['users'] = $this->Profile_model->getFollowing($profile_id);
+		
+		$this->load->view('profileFollowing_view', $user_data); // gegevens user naar view sturen
+	}
+	
+	public function followers() {
+		$profile_id = $this->uri->segment(3);
+		$user_id = $this->session->userdata('userid');
+		$this->load->model('Profile_model');
+		$user_data['follow'] = $this->Profile_model->checkFollow($profile_id, $user_id);
+		$user_data['rows'] = $this->Profile_model->getUser($profile_id);
+		$user_data['users'] = $this->Profile_model->getFollowers($profile_id);
+		
+		$this->load->view('profileFollowers_view', $user_data); // gegevens user naar view sturen
+	}
+	
 	public function follow() {
 		$profile_id = $this->uri->segment(3);
 		$user_id = $this->session->userdata('userid');
