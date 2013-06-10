@@ -149,5 +149,10 @@ class Brainstorm_model extends CI_Model {
 			return "false";
 		}
 	}
+	
+	public function editBrainstorm($data, $brainstorm_ID) {
+		$this->db->where('PK_Brainstorm_ID', $brainstorm_ID);
+		$this->db->update('BS_Brainstorms', $data);
+	}
 }
 ?>
