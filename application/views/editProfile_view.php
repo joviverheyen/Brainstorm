@@ -4,6 +4,7 @@
 	<?php include('includes/titlebar.php')?>
 	
 	<?php foreach($rows as $r) : ?>
+	<article class="edit-title" data-title="Edit your profile">
 	<div class="form">
 		<form method="post" action="editProfile/update" enctype="multipart/form-data" />
 			<input type="text" name="update-username" id="update-username" placeholder="Username" value="<?php echo $r->User_Username; ?>" /> <br />
@@ -42,6 +43,7 @@
 			<input type="submit" value="Update Profile" id="btnUpdateProfile"/>
 		</form>
 	</div>
+	</article>
 	<?php endforeach; ?>
 		
 	<?php include('includes/navbar-profile.php')?>
