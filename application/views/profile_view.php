@@ -51,9 +51,9 @@
 	<?php endforeach; ?>
 	
 	<div class="filter clearfix" id="profile">
-		<a href="#" class="filter-button active" id="ideas-button"><span>My Ideas</span></a>
-		<a href="#" class="filter-button" id="following-button"><span>Following</span></a>
-		<a href="#" class="filter-button" id="followers-button"><span>Followers</span></a>
+		<a href="http://ajweb.be/brainstorm/index.php/profile/index/<?php foreach($rows as $r) : ?><?php echo $r->PK_User_ID ?><?php endforeach; ?>" class="filter-button active" id="ideas-button"><span>My Ideas</span></a>
+		<a href="http://ajweb.be/brainstorm/index.php/profile/following/<?php foreach($rows as $r) : ?><?php echo $r->PK_User_ID ?><?php endforeach; ?>" class="filter-button" id="following-button"><span>Following</span></a>
+		<a href="http://ajweb.be/brainstorm/index.php/profile/followers/<?php foreach($rows as $r) : ?><?php echo $r->PK_User_ID ?><?php endforeach; ?>" class="filter-button" id="followers-button"><span>Followers</span></a>
 	</div>
 	
 	<div class="brainstorm-container">
