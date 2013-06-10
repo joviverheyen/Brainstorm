@@ -297,10 +297,10 @@ div.links a.category {
 	font-size: 12px;
 }
 
-article.brainstorm-details div.links a.subscribe {
+div.links a.subscribe {
 	background-color: #DADADA;
 	color: #BE1622;
-	padding: 1px 10px;
+	padding: 2px 10px;
 	float: right;
 	font-weight: bold;
 	font-size: 12px;

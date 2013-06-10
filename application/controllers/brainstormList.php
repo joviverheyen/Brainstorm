@@ -4,7 +4,8 @@ class BrainstormList extends CI_Controller {
 	
 	public function index() {
 		$this->load->model('brainstorm_model');
-		$data['rows'] = $this->brainstorm_model->getAllBrainstorms();
+		$user_id = $this->session->userdata('userid');
+		$data['rows'] = $this->brainstorm_model->getAllFollowing($user_id);
 		$this->load->view('brainstormList_view', $data);
 	}
 	
