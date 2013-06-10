@@ -30,7 +30,8 @@ class EditBrainstorm extends CI_Controller {
 			'FK_Brainstorm_Tag1' => $tags[0],
 			'FK_Brainstorm_Tag2' => $tags[1],
 			'FK_Brainstorm_Tag3' => $tags[2],
-			'Brainstorm_Privacy' => $this->input->post('privacy')
+			'Brainstorm_Privacy' => $this->input->post('privacy'),
+			'Brainstorm_Status' => $this->input->post('status')
 		);
 		$this->load->model('brainstorm_model');
 		$this->brainstorm_model->editBrainstorm($data, $brainstorm_ID);

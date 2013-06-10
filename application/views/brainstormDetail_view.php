@@ -45,6 +45,8 @@
 	</div>
 	<?php endif ?>
 	
+	<?php foreach($brainstorm as $b) : ?>
+	<?php if($b->Brainstorm_Status == 0) : ?>
 	<div class="form">
 		<?php echo form_open('brainstormDetail/reply'); ?>
 			<textarea name="add-reaction-text" id="add-reaction-text" placeholder="Reply..."></textarea> <br />
@@ -52,6 +54,8 @@
 			<input type="submit" value="Submit reply" id="btnReply"/>
 		<?php echo form_close(); ?>
 	</div>
+	<?php endif; ?>
+	<?php endforeach; ?>
 
 	<?php include('includes/navbar-home.php')?>
 

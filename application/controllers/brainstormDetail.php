@@ -21,6 +21,7 @@ class BrainstormDetail extends CI_Controller {
 		
 		$this->load->model('brainstorm_model');
 		$this->brainstorm_model->reply($data);
+		redirect('http://ajweb.be/brainstorm/index.php/brainstormDetail/show/' . $this->input->post('brainstorm-id'));
 		
 	}
 	

@@ -20,7 +20,9 @@
 					<?php endforeach; ?>
 				</div>
 			
-				<br/>
+				</br>
+				<input type="file" id="userfile" name="userfile" /> <br />
+				</br>
 							
 				<div class="privacy clearfix">
 					<input type="radio" id="public" name="privacy" value="0" <?php if($b->Brainstorm_Privacy == 0) : ?> checked="checked" <?php endif ;?>/>
@@ -28,9 +30,18 @@
 					<input type="radio" id="private" name="privacy" value="1" <?php if($b->Brainstorm_Privacy == 1) : ?> checked="checked" <?php endif ;?>/>
 					<label for="private"><span class="search-filter-button">Private</span></label>
 				</div>
+				
 				</br>
-				<input type="file" id="userfile" name="userfile" /> <br />
+				
+				<div class="status clearfix">
+					<input type="radio" id="open" name="status" value="0" <?php if($b->Brainstorm_Status == 0) : ?> checked="checked" <?php endif ;?>/>
+					<label for="open"><span class="search-filter-button">Open</span></label>
+					<input type="radio" id="closed" name="status" value="1" <?php if($b->Brainstorm_Status == 1) : ?> checked="checked" <?php endif ;?>/>
+					<label for="closed"><span class="search-filter-button">Closed</span></label>
+				</div>
+				
 				</br>
+				
 				<input type="submit" value="edit brainstorm" id="btnEditBrainstorm"/>
 			<?php echo form_close(); ?>
 		</div>	
