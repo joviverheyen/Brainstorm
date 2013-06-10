@@ -4,10 +4,9 @@
 	<?php include('includes/titlebar.php')?>
 	
 	<div class="filter clearfix">
-		<a href="#" class="filter-button active" id="following-button"><span>following</span></a>
-		<a href="#" class="filter-button" id="new-button"><span>new</span></a>
-		<a href="#" class="filter-button" id="popular-button"><span>popular</span></a>
-		<a href="#" class="filter-button" id="subscribed-button"><span>subscribed</span></a>
+		<a href="/brainstorm/index.php/brainstormList" class="filter-button active" id="following-button"><span>following</span></a>
+		<a href="/brainstorm/index.php/brainstormList/newest" class="filter-button" id="new-button"><span>new</span></a>
+		<a href="/brainstorm/index.php/brainstormList/subscription" class="filter-button" id="subscribed-button"><span>subscribed</span></a>
 	</div>
 	
 	<div class="brainstorm-container">

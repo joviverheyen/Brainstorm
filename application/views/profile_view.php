@@ -37,6 +37,12 @@
 					<a href="#" class="category"><span><?php echo $r->Field_Label1 ?></span></a>
 					<a href="#" class="category"><span><?php echo $r->Field_Label2 ?></span></a>
 					<a href="#" class="category"><span><?php echo $r->Field_Label3 ?></span></a>
+					
+					<?php if($subscription == "false") : ?>
+					<a href="http://ajweb.be/brainstorm/index.php/brainstormDetail/subscribe/<?php echo $b->PK_Brainstorm_ID ?>" class="subscribe"><span>follow</span></a>
+					<?php else : ?>
+					<a href="http://ajweb.be/brainstorm/index.php/brainstormDetail/unsubscribe/<?php echo $b->PK_Brainstorm_ID ?>" class="subscribe"><span>unfollow</span></a>
+					<?php endif; ?>
 				</div>
 			</div>
 		</article>

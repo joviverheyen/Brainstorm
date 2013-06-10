@@ -103,5 +103,32 @@ class Brainstorm_model extends CI_Model {
 		/*Data uit formulier invoegen als reactie*/
 		$this->db->insert('BS_Reactions', $data);
 	}
+	
+	public function subscribe($data) {
+		$this->db->insert('BS_BrainstormUserLinks', $data);
+	}
+	
+	public function unsubscribe($data) {
+		$this->db->delete('BS_BrainstormUserLinks', $data);
+	}
+	
+	public function checkSubscription($brainstorm_id, $user_id) {
+		$this->db->select('*');
+		$this->db->from('BS_BrainstormUserLinks');
+		$this->db->where('FK_BrainstormUserLink_User_ID', $user_id);
+		$this->db->where('FK_BrainstormUserLink_Brainstorm_ID', $brainstorm_id);
+		$query = $this->db->get();
+		
+		if($query->num_rows() > 0) {
+			return "true";
+		} else {
+			return "false";
+		}
+	}
+	
+	public function editBrainstorm($data, $brainstorm_ID) {
+		$this->db->where('PK_Brainstorm_ID', $brainstorm_ID);
+		$this->db->update('BS_Brainstorms', $data);
+	}
 }
 ?>
