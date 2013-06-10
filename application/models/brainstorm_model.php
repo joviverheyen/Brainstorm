@@ -18,6 +18,30 @@ class Brainstorm_model extends CI_Model {
 		}
 	}
 	
+	public function getAllSubscriptions($user_id) {
+		/* Alle subscriptions ophalen om uit te lijsten in brainstorm_view */
+		/* SELECT BS_Brainstorms.PK_Brainstorm_ID, BS_Brainstorms.Brainstorm_Title,
+		 BS_Brainstorms.Brainstorm_Timestamp, BS_Users.User_Username
+		FROM BS_Brainstorms
+		JOIN BS_Users ON BS_Users.PK_User_ID = BS_Brainstorms.FK_Brainstorm_User_ID
+		JOIN BS_BrainstormUserLinks ON BS_BrainstormUserLinks.FK_BrainstormUserLink_Brainstorm_ID = BS_Brainstorms.PK_Brainstorm_ID
+		ORDER BY Brainstorm_Timestamp DESC */
+		
+		$this->db->select('BS_Brainstorms.PK_Brainstorm_ID, BS_Brainstorms.Brainstorm_Title, BS_Brainstorms.Brainstorm_Timestamp, BS_Users.User_Username');
+		$this->db->from('BS_Brainstorms');
+		$this->db->join('BS_Users', 'BS_Users.PK_User_ID = BS_Brainstorms.FK_Brainstorm_User_ID');
+		$this->db->join('BS_BrainstormUserLinks', 'BS_BrainstormUserLinks.FK_BrainstormUserLink_Brainstorm_ID = BS_Brainstorms.PK_Brainstorm_ID');
+		$this->db->where('FK_BrainstormUserLink_User_ID', $user_id);
+		$this->db->order_by("Brainstorm_Timestamp", "desc");
+		$q = $this->db->get();
+		if($q->num_rows() > 0) {
+			foreach ($q->result() as $row) {
+				$data[] = $row;
+			}
+			return $data;
+		}
+	}
+	
 	public function addBrainstorm($data) {
 		//Data uit formulier invoegen in BS_Brainstorms tabel in db
 		$this->db->insert('BS_Brainstorms', $data);
@@ -102,6 +126,28 @@ class Brainstorm_model extends CI_Model {
 	public function reply($data) {
 		/*Data uit formulier invoegen als reactie*/
 		$this->db->insert('BS_Reactions', $data);
+	}
+	
+	public function subscribe($data) {
+		$this->db->insert('BS_BrainstormUserLinks', $data);
+	}
+	
+	public function unsubscribe($data) {
+		$this->db->delete('BS_BrainstormUserLinks', $data);
+	}
+	
+	public function checkSubscription($brainstorm_id, $user_id) {
+		$this->db->select('*');
+		$this->db->from('BS_BrainstormUserLinks');
+		$this->db->where('FK_BrainstormUserLink_User_ID', $user_id);
+		$this->db->where('FK_BrainstormUserLink_Brainstorm_ID', $brainstorm_id);
+		$query = $this->db->get();
+		
+		if($query->num_rows() > 0) {
+			return "true";
+		} else {
+			return "false";
+		}
 	}
 }
 ?>

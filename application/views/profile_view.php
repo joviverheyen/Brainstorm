@@ -1,7 +1,7 @@
 <?php include('includes/head.php')?>
 <body>
 	
-	<?php include('includes/titlebar-edit.php')?>
+	<?php include('includes/titlebar-edit-profile.php')?>
 	
 	<?php foreach($rows as $r) : ?>
 		
@@ -37,6 +37,14 @@
 					<a href="#" class="category"><span><?php echo $r->Field_Label1 ?></span></a>
 					<a href="#" class="category"><span><?php echo $r->Field_Label2 ?></span></a>
 					<a href="#" class="category"><span><?php echo $r->Field_Label3 ?></span></a>
+					
+					<?php if($this->session->userdata('userid') != $r->PK_User_ID) : ?>
+						<?php if($follow == "false") : ?>
+						<a href="http://ajweb.be/brainstorm/index.php/profile/follow/<?php echo $r->PK_User_ID ?>" class="subscribe"><span>follow</span></a>
+						<?php else : ?>
+						<a href="http://ajweb.be/brainstorm/index.php/profile/unfollow/<?php echo $r->PK_User_ID ?>" class="subscribe"><span>unfollow</span></a>
+						<?php endif; ?>
+					<?php endif; ?>
 				</div>
 			</div>
 		</article>

@@ -64,6 +64,28 @@ class Profile_model extends CI_Model {
 		}
 
 	}
+	
+	public function follow($data) {
+		$this->db->insert('BS_UserUserLinks', $data);
+	}
+	
+	public function unfollow($data) {
+		$this->db->delete('BS_UserUserLinks', $data);
+	}
+	
+	public function checkFollow($profile_id, $user_id) {
+		$this->db->select('*');
+		$this->db->from('BS_UserUserLinks');
+		$this->db->where('FK_UserUserLink_User_ID', $user_id);
+		$this->db->where('FK_UserUserLink_Following_ID', $profile_id);
+		$query = $this->db->get();
+		
+		if($query->num_rows() > 0) {
+			return "true";
+		} else {
+			return "false";
+		}
+	}
 }
 
 ?>
