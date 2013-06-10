@@ -140,12 +140,14 @@ div.titlebar #center {
 }
 
 div.titlebar #center span.titlebar-title {
+	display: block;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	-o-text-overflow: ellipsis;
 	-ms-text-overflow: ellipsis;
-	max-width: 80%;
+	max-width: 100%;
+	padding: 0px 10px;
 }
 
 div.titlebar #left, div.titlebar #right {
@@ -282,10 +284,12 @@ article.brainstorm-details div.links {
 }
 
 div.links a.category {
+	display: inline-block;
 	background-color: #DADADA;
 	color: #575756;
-	padding: 5px 10px;
+	padding: 2px 7px;
 	margin-right: 5px;
+	margin-bottom: 5px;
 	font-weight: bold;
 	font-size: 12px;
 }
@@ -392,6 +396,11 @@ div.navbar a.active {
 article.profile {
 	clear: both;
 	padding: 20px;
+}
+
+article.profile img {
+	float: left;
+	padding: 0 10px 10px 0px;
 }
 
 article.profile .content p {
