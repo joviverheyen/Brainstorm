@@ -284,6 +284,7 @@ article.brainstorm span.arrow, article.user span.arrow {
 
 article.brainstorm-details div.links {
 	margin: 15px 0px 5px;
+	min-height: 24px;
 }
 
 div.links a.category {
