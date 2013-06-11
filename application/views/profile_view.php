@@ -34,10 +34,15 @@
 				<?php endif; ?>
 				
 				<div class="links">
+					<?php if($r->Field_Label1 != NULL) : ?>
 					<a href="#" class="category"><span><?php echo $r->Field_Label1 ?></span></a>
+					<?php endif; ?>
+					<?php if($r->Field_Label2 != NULL) : ?>
 					<a href="#" class="category"><span><?php echo $r->Field_Label2 ?></span></a>
+					<?php endif; ?>
+					<?php if($r->Field_Label3 != NULL) : ?>
 					<a href="#" class="category"><span><?php echo $r->Field_Label3 ?></span></a>
-					
+					<?php endif; ?>
 					<?php if($this->session->userdata('userid') != $r->PK_User_ID) : ?>
 						<?php if($follow == "false") : ?>
 						<a href="http://ajweb.be/brainstorm/index.php/profile/follow/<?php echo $r->PK_User_ID ?>" class="subscribe"><span>follow</span></a>
