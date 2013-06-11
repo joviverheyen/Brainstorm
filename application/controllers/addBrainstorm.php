@@ -29,8 +29,8 @@ class AddBrainstorm extends CI_Controller {
 			'FK_Brainstorm_Tag3' => $tags[2],
 			'Brainstorm_Privacy' => $this->input->post('privacy')
 		);
-		$this->load->model('brainstorm_model');
-		$bs_id = $this->brainstorm_model->addBrainstorm($data);
+
+		$bs_id = $this->Brainstorm_model->addBrainstorm($data);
 		
 		redirect('http://www.ajweb.be/brainstorm/index.php/brainstormDetail/show/' . $bs_id);
 	}
