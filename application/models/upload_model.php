@@ -1,7 +1,7 @@
 <?php
-class Uploadav_model extends CI_Model {
-	// CODE KOMT VAN CODE IGNITER
-	// Uploaden van een avatar
+class Upload_model extends CI_Model {
+	// CODE VAN CODE IGNITER
+	// Uploaden van afbeeldingen binnen posts
 	var $upload_path;
 	var $upload_path_url;
 	
@@ -24,16 +24,16 @@ class Uploadav_model extends CI_Model {
 		$image_data = $this->upload->data();
 		$filename = $image_data['file_name'];
 		
-		$config = array(
+		$config = array( // thumbnail maken
 			'source_image' => $image_data['full_path'],
-			'new_image' => $this->upload_path . '/avatars',
+			'new_image' => $this->upload_path . '/resize',
 			'maintain_ration' => true,
-			'width' => 100,
-			'height' => 100
+			'width' => 180,
+			'height' => 180
 		);
 		
 		$this->load->library('image_lib', $config);
-		$this->image_lib->resize(); // verkleinen tot avatar
+		$this->image_lib->resize();
 		
 		return $filename;
 		

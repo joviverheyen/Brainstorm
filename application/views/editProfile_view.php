@@ -7,17 +7,27 @@
 	<article class="edit-title" data-title="Edit your profile">
 	<div class="form">
 		<form method="post" action="editProfile/update" enctype="multipart/form-data" />
-			<input type="text" name="update-username" id="update-username" placeholder="Username" value="<?php echo $r->User_Username; ?>" /> <br />
-			<input type="text" name="update-fn" id="update-fn" placeholder="First Name"  value="<?php echo $r->User_FirstName; ?>" /> <br />
-			<input type="text" name="update-ln" id="update-ln" placeholder="Last Name" value="<?php echo $r->User_LastName; ?>" /> <br />
-			<input type="text" name="update-email" id="update-email" placeholder="Email" value="<?php echo $r->User_Email; ?>" /> <br />
+			<input type="text" name="update-username" id="update-username" value="<?php echo $r->User_Username; ?>" /> <br />
+			<label for="update-username" class="edit-label">Username</label>
+			<input type="text" name="update-fn" id="update-fn" value="<?php echo $r->User_FirstName; ?>" /> <br />
+			<label for="update-fn" class="edit-label">First name</label>
+			<input type="text" name="update-ln" id="update-ln" value="<?php echo $r->User_LastName; ?>" /> <br />
+			<label for="update-ln" class="edit-label">Last name</label>
+			<input type="text" name="update-email" id="update-email" value="<?php echo $r->User_Email; ?>" /> <br />
+			<label for="update-email" class="edit-label">Email</label>
 			<input type="file" id="userfile" name="userfile" /> <br />
-			<textarea name="update-bio" id="update-bio" placeholder="Bio"><?php echo $r->User_Bio; ?></textarea> <br />
-			<input type="text" name="update-website" id="update-website" placeholder="Website" value="<?php echo $r->User_Website; ?>" /> <br />
-			<input type="text" name="update-twitter" id="update-twitter" placeholder="Twitter" value="<?php echo $r->User_Twitter; ?>" /> <br />
-			<input type="text" name="update-fb" id="update-fb" placeholder="Facebook" value="<?php echo $r->User_Facebook ?>" /> <br />
-			<input type="text" name="update-dribbble" id="update-dribbble" placeholder="Dribbble" value="<?php echo $r->User_Dribbble; ?>" /> <br />
-			<input type="text" name="update-behance" id="update-behance" placeholder="Behance" value="<?php echo $r->User_Behance; ?>" /> <br />
+			<textarea name="update-bio" id="update-bio"><?php echo $r->User_Bio; ?></textarea> <br />
+			<label for="update-bio" class="edit-label">Bio</label>
+			<input type="text" name="update-website" id="update-website" value="<?php echo $r->User_Website; ?>" /> <br />
+			<label for="update-website" class="edit-label">Website</label>
+			<input type="text" name="update-twitter" id="update-twitter" value="<?php echo $r->User_Twitter; ?>" /> <br />
+			<label for="update-twitter" class="edit-label">Twitter</label>
+			<input type="text" name="update-fb" id="update-fb" value="<?php echo $r->User_Facebook ?>" /> <br />
+			<label for="update-fb" class="edit-label">Facebook</label>
+			<input type="text" name="update-dribbble" id="update-dribbble" value="<?php echo $r->User_Dribbble; ?>" /> <br />
+			<label for="update-dribble" class="edit-label">Dribble</label>
+			<input type="text" name="update-behance" id="update-behance" value="<?php echo $r->User_Behance; ?>" /> <br />
+			<label for="update-behance" class="edit-label">Behance</label>
 			
 			<select id="update-field1" name="update-field1">
 			<option value="">Select Category 1</option>

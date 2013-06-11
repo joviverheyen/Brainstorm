@@ -12,6 +12,7 @@
 			<div class="content">
 				<span class="posted"><?php echo $b->User_Username; ?> - <?php echo $b->Brainstorm_Timestamp; ?></span><br/>
 				<span class="brainstorm-body"><?php echo $b->Brainstorm_Text; ?></span>
+
 			</div>
 			<div class="links">
 				<?php if($b->Tag_Label1 != NULL) : ?>

@@ -111,8 +111,12 @@ class Brainstorm_model extends CI_Model {
 		
 		*/
 		
+		$this->db->select('*');
+		$this->db->from('BS_Reactions');
 		$this->db->join('BS_Users', 'BS_Users.PK_User_ID = BS_Reactions.FK_Reaction_User_ID');
-		$q = $this->db->get_where('BS_Reactions', array('FK_Reaction_Brainstorm_ID' => $brainstorm_ID));
+		$this->db->where('FK_Reaction_Brainstorm_ID', $brainstorm_ID);
+		$this->db->order_by("Reaction_Timestamp", "asc");
+		$q = $this->db->get();		
 		
 		if($q->num_rows() > 0) {
 			foreach ($q->result() as $row) {
